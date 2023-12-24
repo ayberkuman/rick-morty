@@ -36,7 +36,7 @@ import { useQuery } from "react-query";
 import { useDebounce } from "use-debounce";
 import { z } from "zod";
 
-export const schema = z.object({
+const schema = z.object({
   api_characters: z.array(z.number()).optional(),
 });
 
