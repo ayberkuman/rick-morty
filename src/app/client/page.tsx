@@ -229,7 +229,7 @@ export default function Client() {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                           />
-                          <CommandEmpty>No result found.</CommandEmpty>
+                          {!data?.results && <div className="mx-auto my-2 text-sm">No result found.</div>}
                           <CommandGroup className="overflow-y-scroll max-h-96">
                             {isFetching ? (
                               <div className="min-h-96 grid place-items-center">
