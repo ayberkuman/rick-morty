@@ -28,7 +28,7 @@ export default function Pagination({ totalPages = 1 }: { totalPages: number }) {
           isDisabled={currentPage <= 1}
         />
 
-        <div className="inline-flex -space-x-px">
+        <div className="sm:inline-flex -space-x-px hidden ">
           {allPages.map((page, index) => {
             let position: "first" | "last" | "single" | "middle" | undefined;
 

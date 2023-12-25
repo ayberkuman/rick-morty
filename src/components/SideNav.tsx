@@ -16,9 +16,9 @@ const links = [
 export default function SideNav() {
   const pathname = usePathname();
   return (
-    <div className="flex h-full flex-col px-3 py-4 md:px-2">
+    <div className="flex h-full flex-col px-5 py-5">
       <Link
-        className="mb-2 flex h-20 items-end justify-start rounded-md bg-primary p-4 md:h-40"
+        className="mb-2 flex h-12 items-end justify-start rounded-md bg-primary p-4 md:h-40"
         href="/"
       >
         <div className="w-32 md:w-40 text-white">

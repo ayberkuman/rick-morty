@@ -28,7 +28,7 @@ import { useResetPagination } from "@/hooks/useResetPagination";
 import { cn } from "@/lib/utils";
 import { APIResponse } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CheckIcon, ChevronDown, Loader2, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckIcon, ChevronDown, Loader2, X } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -131,10 +131,10 @@ export default function Client() {
   return (
     <Form {...form}>
       <form
-        className="max-w-3xl mx-auto"
+        className="mx-auto"
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        <h1 className="text-center font-medium p-4">
+        <h1 className="text-center font-medium">
           This page uses React Query and fetches data on the client side, for
           selected characters to be consistent between page changes I used
           context again.
@@ -147,7 +147,7 @@ export default function Client() {
           </div>
         ) : (
           <Card>
-            <CardContent className="grid gap-4 pt-4">
+            <CardContent className="grid p-2 sm:p-4 gap-4 pt-4 text-center">
               <FormField
                 control={form.control}
                 name="api_characters"
@@ -159,7 +159,7 @@ export default function Client() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
-                          <div className="relative flex min-h-[36px] items-center justify-end rounded-md border data-[state=open]:border-ring">
+                          <div className="relative flex max-h-14 md:max-h-24 overflow-y-auto items-center justify-end rounded-md border data-[state=open]:border-ring">
                             <div className="relative mr-auto flex flex-grow flex-wrap items-center overflow-hidden px-3 py-1">
                               {selectedNames.length > 0 ? (
                                 selectedNames.map((name, index) => (
@@ -230,7 +230,7 @@ export default function Client() {
                             onChange={(e) => setSearchQuery(e.target.value)}
                           />
                           {!data?.results && <div className="mx-auto my-2 text-sm">No result found.</div>}
-                          <CommandGroup className="overflow-y-scroll max-h-96">
+                          <CommandGroup className="overflow-y-scroll max-h-48 md:max-h-96">
                             {isFetching ? (
                               <div className="min-h-96 grid place-items-center">
                                 <Loader2 className="animate-spin h-5 w-5 text-primary" />
@@ -318,7 +318,7 @@ export default function Client() {
                               }
                               disabled={currentPage === 1}
                             >
-                              Previous Page
+                             <ArrowLeft className="w-4" />
                             </Button>
                             <Badge variant="outline">
                               Current Page: {currentPage}
@@ -332,7 +332,7 @@ export default function Client() {
                               }}
                               disabled={isPreviousData || !data?.info?.next}
                             >
-                              Next Page
+                              <ArrowRight className="w-4" />
                             </Button>
                           </div>
                         </Command>

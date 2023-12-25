@@ -8,7 +8,7 @@ export default function Layout({
 }) {
   return (
     <Providers>
-      <div className="min-h-screen max-w-screen-xl mx-auto p-24">
+      <div className="min-h-screen md:px-0 md:py-5 md:mr-5">
         {children}
       </div>
       <Toaster />

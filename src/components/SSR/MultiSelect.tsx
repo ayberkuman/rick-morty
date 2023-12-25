@@ -13,7 +13,7 @@ export default function MultiSelect() {
   return (
     <PopoverTrigger asChild>
       <FormControl>
-        <div className="relative flex min-h-[36px] items-center justify-end rounded-md border data-[state=open]:border-ring">
+        <div className="relative flex max-h-14 md:max-h-24 overflow-y-auto items-center justify-end rounded-md border data-[state=open]:border-ring">
           <div className="relative mr-auto flex flex-grow flex-wrap items-center overflow-hidden px-3 py-1">
             {selectedNames.length > 0 ? (
               selectedNames.map((name, index) => (

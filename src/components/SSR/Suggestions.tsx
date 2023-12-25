@@ -73,7 +73,7 @@ export default function Suggestions({
           defaultValue={searchParams.get("query")?.toString()}
           placeholder={"Search characters..."}
         />
-        <CommandGroup className="overflow-y-scroll max-h-96">
+        <CommandGroup className="overflow-y-scroll max-h-48 md:max-h-96">
           {options?.map((option, index) => {
             const isSelected = selectedValues.includes(option.id);
             return (

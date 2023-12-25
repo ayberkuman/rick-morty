@@ -38,7 +38,7 @@ export default function SSR({
     toast({
       title: "You submitted the following id's of characters:",
       description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+        <pre className="mt-2 w-full max-w-[50%] rounded-md bg-slate-950 p-4">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
@@ -48,15 +48,15 @@ export default function SSR({
   return (
     <Form {...form}>
       <form
-        className="max-w-3xl mx-auto"
+        className="mx-auto"
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        <h1 className="text-center font-medium p-4">
+        <h1 className="text-center font-medium">
           This page uses React Server Components and fetches data on the server
           side, and URL Search Params for search and pagination.
         </h1>
         <Card>
-          <CardContent className="grid gap-4 pt-4">
+          <CardContent className="grid p-2 sm:p-4 gap-4 pt-4 text-center">
             <FormField
               control={form.control}
               name="api_characters"

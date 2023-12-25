@@ -28,7 +28,7 @@ export default async function Home({
   const totalPages = data?.info?.pages ?? 1;
 
   return (
-    <main className="min-h-screen max-w-screen-xl mx-auto p-24">
+    <main className="min-h-screen mx-auto md:py-5 md:mr-5">
       <Search
         options={data.results}
         totalPages={totalPages}
