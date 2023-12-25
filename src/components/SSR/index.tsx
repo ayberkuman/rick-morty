@@ -1,7 +1,7 @@
 "use client";
+
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -47,10 +47,7 @@ export default function SSR({
 
   return (
     <Form {...form}>
-      <form
-        className="mx-auto"
-        onSubmit={form.handleSubmit(onSubmit)}
-      >
+      <form className="mx-auto" onSubmit={form.handleSubmit(onSubmit)}>
         <h1 className="text-center font-medium">
           This page uses React Server Components and fetches data on the server
           side, and URL Search Params for search and pagination.
@@ -77,7 +74,9 @@ export default function SSR({
                 </FormItem>
               )}
             />
-            <Button className="w-min mx-auto"  type="submit">Submit</Button>
+            <Button className="w-min mx-auto" type="submit">
+              Submit
+            </Button>
           </CardContent>
         </Card>
       </form>
